@@ -1,7 +1,7 @@
 ---
 title: 从这里开始：我的技术笔记
 author: 黎健恒
-pubDatetime: 2026-10-14T00:00:00Z
+pubDatetime: "2026-10-14T00:00:00Z"
 description: 记录 AI 工程、前端开发与个人产品实践，让每次探索都有迹可循。
 tags: ["随笔","AI 工程"]
 featured: false

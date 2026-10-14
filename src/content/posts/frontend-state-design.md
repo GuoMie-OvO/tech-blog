@@ -1,7 +1,7 @@
 ---
 title: 前端交互：把加载、空状态与错误讲清楚
 author: 黎健恒
-pubDatetime: 2026-10-14T00:00:00Z
+pubDatetime: "2026-10-14T00:00:00Z"
 description: 让用户理解页面正在做什么，并在失败后有明确的下一步。
 tags: ["前端","产品设计"]
 featured: false

@@ -8,7 +8,9 @@ content:
     type: collection
     path: src/content/posts
     format: yaml-frontmatter
-    filename: "{primary}.md"
+    filename:
+      template: "{primary}.md"
+      field: create
     subfolders: false
     view:
       primary: title
@@ -22,11 +24,12 @@ content:
         label: 发布时间
         type: date
         required: true
-        options: { time: true }
+        options: { time: true, format: "yyyy-MM-dd'T'HH:mm:ssxxx" }
       - name: modDatetime
         label: 更新时间
         type: date
-        options: { time: true }
+        default: ""
+        options: { time: true, format: "yyyy-MM-dd'T'HH:mm:ssxxx" }
       - { name: description, label: 摘要, type: text, required: true }
       - { name: tags, label: 标签, type: string, list: true }
       - { name: featured, label: 精选, type: boolean, default: false }

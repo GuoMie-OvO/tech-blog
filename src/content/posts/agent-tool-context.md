@@ -1,7 +1,7 @@
 ---
 title: AI Agent：让工具按需进入上下文
 author: 黎健恒
-pubDatetime: 2026-10-14T00:00:00Z
+pubDatetime: "2026-10-14T00:00:00Z"
 description: 从通用设计出发，讨论工具选择、上下文开销与异常回退。
 tags: ["AI 工程","Agent"]
 featured: true

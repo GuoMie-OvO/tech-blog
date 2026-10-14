@@ -1,7 +1,7 @@
 ---
 title: 静态博客：写作、构建与发布的完整链路
 author: 黎健恒
-pubDatetime: 2026-10-14T00:00:00Z
+pubDatetime: "2026-10-14T00:00:00Z"
 description: 用 Markdown、Pagefind 和静态构建，让内容管理与网站部署各司其职。
 tags: ["前端","Astro"]
 featured: false
