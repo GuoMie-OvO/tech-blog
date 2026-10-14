@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import "./theme.css";
+@import "./typography.css";
+@import "rehype-callouts/theme/obsidian";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  * {
+    @apply border-border outline-accent/75;
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-muted) transparent;
+  }
+  a,
+  button,
+  #main-content {
+    @apply outline-accent outline-offset-1 focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility max-w-app {
+  @apply max-w-3xl;
+}
+
+@utility app-layout {
+  @apply max-w-app mx-auto w-full px-4;
+}
+
+@utility active-nav {
+  @apply underline decoration-wavy decoration-2 underline-offset-8;
+}
+
+:target {
+  scroll-margin-block: 1rem;
+}
+
+body { line-height: 1.8; }
+#hero { padding-block: 3.5rem; }
+#hero h1 { line-height: 1.3; letter-spacing: -.04em; }
+.hero-kicker { color: var(--accent); font-size: .8rem; letter-spacing: .12em; font-weight: 600; }
+.hero-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.hero-links a { padding: .5rem 1rem; border: 1px solid var(--border); border-radius: .5rem; }
+.hero-links a:first-child { background: var(--accent); color: white; }
+.project-card { padding: 1.5rem; border: 1px solid var(--border); border-radius: .75rem; margin-block: 1.5rem; }
+.project-card h2 { font-size: 1.5rem; font-weight: 600; }
+.project-meta { color: var(--accent); font-size: .85rem; margin-bottom: .5rem; }
+.project-card p { margin-block: .75rem; }
