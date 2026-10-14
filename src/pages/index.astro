@@ -52,8 +52,8 @@ const homePath = getRelativeLocaleUrl(locale, "");
         <span class="sr-only">RSS Feed</span>
       </a>
 
-      <p class="hero-kicker">AI ENGINEERING · BUILD & LEARN</p>
-      <p class="mt-4 text-lg">你好，我是黎健恒（GuoMie）。这里记录 AI 工程、前端开发与个人项目中的思考，把实践写成可复用的笔记。</p>
+      <p class="hero-kicker">AI 产品 · 工程实践 · BUILD & LEARN</p>
+      <p class="mt-4 text-lg">你好，我是黎健恒（GuoMie）。从金融 AI 到端侧 Agent、自动化工具与桌面阅读，我把产品设计、开发与验证连接起来，也把实践写成可复用的技术笔记。</p>
       <div class="hero-links"><a href="/posts/">阅读技术文章</a><a href="/projects/">探索个人作品 ↗</a></div>
       {
         socials.length > 0 && (
@@ -65,6 +65,22 @@ const homePath = getRelativeLocaleUrl(locale, "");
           </div>
         )
       }
+    </section>
+
+    <section class="border-border border-b py-8" aria-labelledby="personal-projects-title">
+      <h2 id="personal-projects-title" class="text-2xl font-semibold">最新个人作品</h2>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        <a href="/projects/#android-开源连点器--liquid-glass-tapper" class="border-border rounded-lg border p-5 hover:border-accent">
+          <span class="text-accent text-sm">Android · 开源工具</span>
+          <h3 class="mt-2 text-lg font-semibold">Liquid Glass Tapper ↗</h3>
+          <p class="text-muted-foreground mt-2 text-sm">把重复操作变成可控的动作：手势编排、屏幕点位与悬浮控制。</p>
+        </a>
+        <a href="/projects/#澄页-clearleaf" class="border-border rounded-lg border p-5 hover:border-accent">
+          <span class="text-accent text-sm">Windows · 本地阅读</span>
+          <h3 class="mt-2 text-lg font-semibold">澄页 Clearleaf ↗</h3>
+          <p class="text-muted-foreground mt-2 text-sm">从本地文件到连续阅读：书库、排版、进度和批注。</p>
+        </a>
+      </div>
     </section>
 
     {
