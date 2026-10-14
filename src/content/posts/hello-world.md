@@ -1,13 +1,14 @@
 ---
 title: 从这里开始：我的技术笔记
 author: 黎健恒
-pubDatetime: "2026-10-14T00:00:00Z"
-description: 记录 AI 工程、前端开发与个人产品实践，让每次探索都有迹可循。
-tags: ["随笔","AI 工程"]
+pubDatetime: 2026-10-14T00:00:00+00:00
+description: 记录 AI Agent、前端开发与个人产品实践，让每次探索都有迹可循。
+tags:
+  - 随笔
+  - AI 工程
 featured: false
 draft: false
 ---
-
 ## 为什么写这个博客
 
 实现一个功能只是开始。把问题、选择和验证过程写下来，才能在下一次遇到相似问题时少走弯路。
