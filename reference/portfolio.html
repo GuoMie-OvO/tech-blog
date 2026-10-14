@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="黎健恒的金融 AI 产品作品集与实习项目。"><title>黎健恒 · 产品作品集与实习项目</title>
+<style>
+:root{
+  --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --line:#e3e7ee;
+  --blue:#2a78d6; --orange:#eb6834;
+  --rule:rgba(11,11,11,0.10); --plane:#f9f9f7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{background:var(--plane);
+  font-family:"Microsoft YaHei","微软雅黑",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ink); font-size:10pt; line-height:1.6; padding:16px 0 24px}
+.page{width:210mm; height:297mm; margin:0 auto 10px; background:#fff;
+  padding:15mm 16mm 11mm; position:relative; display:flex; flex-direction:column;
+  box-shadow:0 3px 14px rgba(15,26,45,.12); overflow:hidden}
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;
+  padding-bottom:6px;border-bottom:2px solid var(--blue);margin-bottom:13px}
+.hdr .t{font-size:15pt;font-weight:700;letter-spacing:.6px}
+.hdr .s{font-size:8.5pt;color:var(--muted);letter-spacing:.3px}
+.hdr .pg{font-size:8pt;color:var(--muted)}
+
+h3{font-size:11pt;font-weight:700;margin:13px 0 6px;padding-left:9px;
+  border-left:3px solid var(--blue);line-height:1.2}
+h3:first-of-type{margin-top:0}
+p{color:var(--ink2);margin-bottom:5px}
+.cover{justify-content:center;align-items:center;text-align:center;padding:0 22mm}
+.cover .lg{width:142px;margin-bottom:24px}
+.cover h1{font-size:30pt;font-weight:700;letter-spacing:3px;line-height:1.15}
+.cover .sub{margin-top:12px;font-size:12.5pt;color:var(--blue);font-weight:700;letter-spacing:.5px}
+.cover .desc{margin-top:20px;font-size:10.5pt;color:var(--ink2);line-height:1.85;max-width:150mm}
+.cover .toc{margin-top:26px;display:flex;gap:10px;width:100%;max-width:160mm}
+.cover .toc div{flex:1;border:1px solid var(--rule);border-radius:6px;padding:11px 9px;background:#fbfcfe}
+.cover .toc .n{font-size:8pt;color:var(--blue);font-weight:700;letter-spacing:.5px}
+.cover .toc .k{font-size:9.5pt;font-weight:700;margin-top:3px;line-height:1.4}
+.cover .cont{margin-top:28px;font-size:9.5pt;color:var(--ink2);line-height:1.9}
+.cover .foot{margin-top:14px;font-size:8.5pt;color:var(--muted)}
+
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+.card{border:1px solid var(--rule);border-radius:6px;padding:9px 11px;background:#fcfcfb}
+.card .ct{font-size:9.5pt;font-weight:700;margin-bottom:3px}
+.card p{font-size:8.8pt;margin:0;line-height:1.6}
+ul{list-style:none}
+li{position:relative;padding-left:12px;margin-top:3px;color:var(--ink2);font-size:9.3pt;line-height:1.6}
+li::before{content:"";position:absolute;left:2px;top:.62em;width:4px;height:4px;border-radius:50%;background:var(--blue)}
+li b{color:var(--ink)}
+li em{font-style:normal;color:var(--blue);font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:8px 0 2px}
+.kpi{border:1px solid var(--rule);border-radius:6px;padding:9px 11px;background:#fcfcfb}
+.kpi .v{font-size:18pt;font-weight:700;line-height:1.1;letter-spacing:-.4px}
+.kpi .v small{font-size:10pt;font-weight:700;margin-left:1px}
+.kpi .l{font-size:8.2pt;color:var(--muted);margin-top:3px;line-height:1.45}
+.kpi.hero .v{color:var(--blue)}
+figure{margin:6px 0 0}
+figcaption{font-size:8.4pt;color:var(--muted);margin-top:4px;line-height:1.5}
+figcaption b{color:#0b0b0b}
+.lgd{display:flex;gap:16px;align-items:center;font-size:8.6pt;color:var(--ink2);margin:2px 0 3px}
+.lgd i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.lgd .ln{width:14px;height:0;border-top:2px solid var(--orange);border-radius:0;background:none}
+.shot{width:100%;border:1px solid var(--rule);border-radius:5px;display:block}
+.shotwrap{margin-top:7px}
+.note{border-left:3px solid var(--blue);background:#f2f8ff;border-radius:0 5px 5px 0;
+  padding:9px 13px;margin-top:10px;font-size:9.4pt;color:var(--ink2);line-height:1.66}
+.note b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:7px;font-size:8.8pt}
+th,td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--line)}
+th{font-size:8.2pt;color:var(--muted);font-weight:600;background:#fafbfc}
+td b{color:var(--ink)}
+.num{font-variant-numeric:tabular-nums}
+.foot{margin-top:auto;padding-top:6px;display:flex;justify-content:space-between;
+  font-size:8pt;color:#b3bac6;border-top:1px solid var(--line)}
+@page{size:A4 portrait;margin:0}
+@media print{body{background:#fff;padding:0}.page{margin:0;box-shadow:none}}
+</style>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;color:#1d1d1f}.page{height:297mm;overflow:visible;break-after:page}.page:last-of-type{break-after:auto}.hdr{border-bottom:1.5px solid #0071e3}.hdr .t{font-size:15pt;font-weight:600}.hdr .s{font-size:8pt}.page-content{flex:0 0 auto}.page>.foot{flex:0 0 auto}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{gap:10px}.card{background:#f7f8fa;border:1px solid #e6e8eb;border-radius:9px;padding:11px 12px}.card .ct{font-size:10pt;font-weight:600}.card p{font-size:9pt;line-height:1.7}.kpi{border-radius:8px;background:#f7f8fa}.kpi .v{font-weight:600}.cover h1{font-weight:600;letter-spacing:2px}.cover .sub{color:#0071e3;font-size:13pt}.cover .desc{font-size:10pt;line-height:1.95;margin-top:20px}.cover .toc{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:26px}.cover .toc div{border-radius:9px;background:#f7f8fa;border-color:#e6e8eb}.cover .toc .k{font-weight:600}.cover .profile-label{font-size:8.5pt;letter-spacing:1px;color:#6e6e73;margin-top:23px}.cover .source-date{font-size:8pt;color:#8b9098;margin-top:12px}.cover .site-link{font-size:9pt;color:#0071e3;margin-top:14px;display:block;text-decoration:none}.cover .foot{margin-top:16px}h3{font-size:11pt;border-left-color:#0071e3;margin-top:16px;font-weight:600}p{line-height:1.8;font-size:9.6pt}.note{background:#f1f6fc;border-left-color:#0071e3;font-size:9pt;margin-top:14px;padding:10px 13px;line-height:1.8}.flow{display:grid;gap:8px;margin-top:8px}.flow-row{display:grid;grid-template-columns:28px 96px 1fr;align-items:start;gap:8px;border-bottom:1px solid #e6e8eb;padding:8px 0}.flow-row .step{font-size:8pt;color:#0071e3;padding-top:1px}.flow-row strong{font-size:9.5pt;font-weight:600}.flow-row p{font-size:9pt;line-height:1.7}.shotwrap{margin-top:14px}.shot{border-radius:8px}.pair-shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:13px}.pair-shots img{height:auto;width:100%}.pair-shots figcaption{font-size:8.5pt;line-height:1.7}.shot-button{padding:0;margin:0;border:0;background:none;display:block;width:100%;cursor:zoom-in}.shot-button:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid #0071e3;outline-offset:4px}.scope{font-size:8.5pt;color:#727883;line-height:1.75;margin-top:12px}.intern-block{padding:20px 0;border-bottom:1px solid #e3e7ee}.intern-block:first-of-type{padding-top:10px}.intern-head{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-bottom:12px}.intern-head strong{font-size:12pt;font-weight:600}.intern-head span{font-size:8.5pt;color:#6e6e73;white-space:nowrap}.intern-role{font-size:9.5pt;color:#0071e3;margin-bottom:9px}.intern-block .grid2{margin-top:13px}.intern-block .grid2 .card p{font-size:9.2pt}.metrics-inline{display:flex;align-items:baseline;gap:10px;margin-top:14px}.metrics-inline strong{font-size:21pt;font-weight:600;color:#0071e3}.metrics-inline span{font-size:9pt;color:#6e6e73}.print-help{font-size:8pt;color:#8b9098;margin-top:12px}.preview{border:0;padding:18px;max-width:95vw;max-height:92vh;background:#fff;border-radius:10px;overflow:auto}.preview::backdrop{background:#0009}.preview img{display:block;width:100%;height:auto}.preview header{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:13px;margin-bottom:14px}.preview-close{border:1px solid #ddd;background:#f5f5f7;border-radius:20px;padding:7px 18px;min-height:44px;cursor:pointer;font:inherit}.preview-title{color:#555}.foot{color:#8b919b;font-size:8pt;margin-top:auto;line-height:1.6}.page .grid2,.page .grid3,.page .flow-row,.intern-block{break-inside:avoid}@media(max-width:820px){body{padding:0}.page{width:100%;height:auto;min-height:100vh;padding:28px 24px;margin:0;border-bottom:1px solid #ddd;box-shadow:none}.cover{padding:50px 26px}.cover h1{font-size:30pt}.cover .sub{font-size:11pt}.cover .desc{font-size:10pt}.hdr{align-items:start;gap:10px}.hdr .t{font-size:13pt}.hdr .s{font-size:8pt}.grid3{grid-template-columns:1fr}.grid2,.pair-shots{grid-template-columns:1fr}.flow-row{grid-template-columns:23px 80px 1fr;gap:5px}.flow-row p{font-size:9pt}.kpis{grid-template-columns:1fr 1fr}.intern-head{display:block}.intern-head span{display:block;margin-top:5px}.foot{margin-top:25px}.preview{max-width:96vw;padding:12px}}@media print{body{padding:0;background:#fff}.page{width:210mm;height:297mm;min-height:0;margin:0;padding:15mm 16mm 11mm;box-shadow:none;border-bottom:0;overflow:visible}.cover{padding:0 22mm}.grid3{grid-template-columns:1fr 1fr 1fr}.grid2,.pair-shots{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:repeat(4,1fr)}.foot{margin-top:auto}.intern-head{display:flex}.intern-head span{display:inline}.preview,.print-help{display:none}a{color:inherit}.page:last-of-type{break-after:auto}@page{size:A4 portrait;margin:0}}
+</style><style>.cover .toc .n,.cover .toc .k{border:0;padding:0;background:none}.cover .toc a{display:block;color:inherit;text-decoration:none}.cover .toc a:focus-visible{outline:2px solid #0071e3;outline-offset:5px}html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style><style>.personal-case{padding-top:100px;padding-bottom:50px;max-width:980px}.personal-hero{max-width:800px;margin-bottom:50px}.personal-hero h1{font-size:clamp(36px,5vw,64px);line-height:1.2;letter-spacing:-2px;margin:20px 0 26px}.personal-hero h1 span{font-size:.67em;letter-spacing:-1px}.personal-hero p{font-size:20px;line-height:1.8;color:var(--secondary,#6e6e73)}.personal-case .case-block h2{font-size:30px;line-height:1.4;margin-bottom:24px}.personal-case .case-block{padding:48px 0}.personal-case .case-block p{line-height:1.9}.eyebrow{font-size:13px!important;letter-spacing:1px;color:#0071e3!important}.personal-shot img{width:100%;border-radius:16px;border:1px solid #e0e0e5;display:block}.personal-shot figcaption{font-size:13px;line-height:1.7;color:#6e6e73;margin-top:14px}.tap-flow{padding:38px 26px;background:linear-gradient(145deg,#e4f0fb,#f3ebfa);border:1px solid #d5dfeb;border-radius:22px;color:#1d1d1f;text-align:center}.tap-flow>span{font-size:12px;color:#526376;letter-spacing:2px}.tap-flow>div{display:flex;align-items:center;justify-content:center;gap:24px;margin:30px 0}.tap-flow b{font-size:32px;background:#ffffffa8;border:1px solid #fff;border-radius:16px;padding:20px;min-width:110px}.tap-flow small{display:block;font-size:14px;font-weight:500;margin-top:8px}.tap-flow i{font-size:24px;font-style:normal}.tap-flow p{font-size:14px;color:#526376;line-height:1.8}.project-card.tapper-card{background:#e9f0f7}.project-card.clearleaf-card{background:#edf2ed}.project-card .tap-flow{padding:22px 14px;margin-top:22px}.project-card .tap-flow>div{gap:8px;margin:18px 0}.project-card .tap-flow b{font-size:22px;min-width:0;padding:14px 9px}.project-card .tap-flow small{font-size:11px}.project-card .tap-flow p{font-size:11px}.personal-entry{padding:60px 0 90px}.personal-entry h2{font-size:36px;margin:16px 0 28px}.personal-links{display:grid;grid-template-columns:1fr 1fr;gap:20px}.personal-links a{border:1px solid #dadce0;border-radius:18px;padding:28px;text-decoration:none;color:inherit}.personal-links strong,.personal-links span{display:block}.personal-links strong{font-size:23px;margin-bottom:12px}.personal-links span{color:#6e6e73;font-size:14px}.desktop-nav{gap:20px}.personal-case details p{font-size:15px}@media(max-width:760px){.personal-case{padding-top:60px}.personal-hero p{font-size:17px}.personal-case .case-block h2{font-size:25px}.tap-flow{padding:24px 10px}.tap-flow>div{gap:8px}.tap-flow b{min-width:0;padding:16px 12px;font-size:26px}.tap-flow i{font-size:18px}.personal-links{grid-template-columns:1fr}.personal-entry h2{font-size:29px}}@media(prefers-color-scheme:dark){.personal-links a{border-color:#424247}.project-card.tapper-card,.project-card.clearleaf-card{color:#1d1d1f}}.cover .toc{margin-top:15px;gap:8px}.cover .personal-toc{margin-top:8px}.cover .cont{margin-top:18px}.cover .desc{margin-top:14px;font-size:9.5pt}.page .tap-flow{padding:18px;margin:10px 0}.page .tap-flow>div{margin:15px 0}.page .tap-flow b{font-size:21px;padding:10px;min-width:85px}.page .tap-flow p{font-size:9pt}.page .tap-flow small{font-size:9pt}.page a{overflow-wrap:anywhere}</style></head>
+<body>
+<section class="page cover" data-page="1" id="page-1"><h1>黎健恒</h1><div class="sub">AI 产品经理 · 金融 AI / 投研工具方向</div><div class="profile-label">个人介绍</div><div class="desc">经济学本科，从实习生转为正式员工，独立负责金融投研平台与 AI 舆情分析系统的需求梳理、产品设计、开发和上线。投研平台已供 5+ 家券商客户实际使用。<br>业余独立开发 iOS 端侧 Agent，自研 Python Harness，完成模型接入、工具编排与真机验证。<br>独立开发 Android 开源连点器与澄页桌面阅读器，持续探索自动化工具与个人软件体验。<br>我的优势是理解业务问题，也能亲手把产品做出来。</div><div class="toc"><div><a href="#page-2"><div class="n">案例一 · 02—03</div><div class="k">智能前端 · 量化投研平台<br>信息架构、交互与交付</div></a></div><div><a href="#page-4"><div class="n">案例二 · 04—05</div><div class="k">金融舆情系统<br>内容链路、语义研判与数据产品</div></a></div><div><a href="#page-6"><div class="n">案例三 · 06—07</div><div class="k">iOS 端侧 AI Agent<br>自研 Harness、工具链与验证</div></a></div><div><a href="#page-8"><div class="n">案例四 · 08</div><div class="k">Android 开源连点器<br>动作编排与悬浮控制</div></a></div><div><a href="#page-9"><div class="n">案例五 · 09</div><div class="k">澄页 Clearleaf<br>本地书库与阅读体验</div></a></div><div><a href="#page-10"><div class="n">实习项目 · 10</div><div class="k">AIGC 应用与内容运营<br>本地模型实践、内容交付与增长</div></a></div></div><div class="cont">13336421933 · 415045878@qq.com · 广东省广州市</div><a class="site-link" href="https://guomie-tech-blog.pages.dev/" target="_blank" rel="noopener">在线作品集：li-jianheng-portfolio.app.workbuddy.host ↗</a><div class="source-date">新增连点器与澄页案例 · 修订于 2026 年 10 月 14 日</div><div class="print-help">图片可点击放大；浏览器打印使用 A4、100% 缩放并关闭页眉页脚。</div></section>
+<section class="page" data-page="2" id="page-2"><div class="hdr"><div><div class="t">案例一 · 智能前端与量化投研平台</div><div class="s">产品实践（实习至正式任职阶段）｜ 2025.06 — 2026.09</div></div><div class="pg">02 / 10</div></div><div class="page-content"><h3>从分散的金融数据，到连续的投研工作流</h3><p>投研人员需要同时查看市场资金、题材、个股与舆情。信息分散在不同工具中，切换成本高，结论与原始报道也难以对应。产品围绕「市场全貌 → 模块研究 → 个股下钻 → 原文验证」组织工作流，将查数、看盘与智能问答放进同一套界面。</p><h3>我的职责与交付</h3><div class="grid3"><div class="card"><div class="ct">需求与产品定义</div><p>结合 5+ 家券商需求走访，梳理 15+ 条核心业务流程，定义工作台与模块之间的研究路径。</p></div><div class="card"><div class="ct">独立前端设计与实现</div><p>承担信息架构、交互设计与前端实现，以 AI 辅助编程完成页面、图表、接口和部署集成。</p></div><div class="card"><div class="ct">交付与客户讲解</div><p>交付可一键启动的本地前端与集成环境，支撑 20 余场客户方案讲解。</p></div></div><div class="kpis"><div class="kpi"><div class="v">5+</div><div class="l">券商客户实际使用</div></div><div class="kpi"><div class="v">10</div><div class="l">业务页面实现</div></div><div class="kpi"><div class="v">15+</div><div class="l">核心流程梳理</div></div><div class="kpi"><div class="v">20+</div><div class="l">客户方案讲解</div></div></div><figure class="shotwrap"><button class="shot-button" data-src="assets/hero.png" data-caption="投研工作台" aria-label="放大投研工作台"><img class="shot" src="assets/hero.png" alt="投研工作台"></button><figcaption>实际产品界面：工作台整合市场概览、题材排行、连板天梯、龙虎榜与舆情入口。数值为既有项目记录；部分扩展视图仍为展示原型，边界见下一页。</figcaption></figure></div><div class="foot"><span>黎健恒 · 产品作品集与实习项目 · 2026 年 10 月</span><span>第 2 页 / 共 10 页</span></div></section>
+<section class="page" data-page="3" id="page-3"><div class="hdr"><div><div class="t">案例一 · 核心模块与使用体验</div><div class="s">行情与情绪同屏可读 ｜ 信息架构、可视化、智能问答</div></div><div class="pg">03 / 10</div></div><div class="page-content"><h3>围绕投研任务，组织核心模块</h3><div class="grid3"><div class="card"><div class="ct">市场工作台</div><p>汇总成交、涨跌、涨停与市场表现，把高频入口放在同屏，先形成全市场判断。</p></div><div class="card"><div class="ct">连板天梯</div><p>按高度分组，呈现封单、资金净额与新高等级，支持交易日期与题材筛选。</p></div><div class="card"><div class="ct">龙虎榜</div><p>买入与卖出双表并列，连接营业部、席位与资金结构；事实榜单与战法筛选分开。</p></div><div class="card"><div class="ct">题材与概念</div><p>从排行、涨停家数与资金表现进入关联个股，连接板块判断与个股分析。</p></div><div class="card"><div class="ct">综合打分</div><p>结合综合评分、资金流和技术维度筛选，提供搜索、交易日期及历史优选。</p></div><div class="card"><div class="ct">舆情与个股下钻</div><p>从市场趋势和行业信息进入个股详情，查看情感构成、来源和相关原文。</p></div></div><div class="pair-shots"><figure class="shotwrap"><button class="shot-button" data-src="assets/ladder.png" data-caption="连板天梯" aria-label="放大连板天梯"><img class="shot" src="assets/ladder.png" alt="连板天梯"></button><figcaption>高度、封单与资金指标同屏比较，支持日期与题材筛选。</figcaption></figure><figure class="shotwrap"><button class="shot-button" data-src="assets/dragon.png" data-caption="龙虎榜" aria-label="放大龙虎榜"><img class="shot" src="assets/dragon.png" alt="龙虎榜"></button><figcaption>买入与卖出双表并列，统一席位与资金结构口径。</figcaption></figure></div><h3>智能问答与连续浏览</h3><p>接入模型服务，支持多模型选择、流式输出、多轮会话与停止生成。历史会话保存在当前浏览器，附件与网页通过侧栏预览。舆情页保留挂载状态，缓存并合并请求，通过快照版本检查触发后台更新，减少切页时的整页等待。</p><div class="note">交互采用一致的筛选、日期、弹层、空状态与口径说明；支持深浅主题和顶部 / 侧边导航。评分与利好占比、累计与区间指标分开表达，避免同一数据在不同页面出现不同解释。</div><p class="scope">实现边界：核心行情、评分与舆情模块接入对应接口；百日新高和梯队矩阵在当前源码中使用展示数据，属于扩展视图原型。智能问答依赖已接入的模型服务。React、Vite、Ant Design 与 ECharts 支持界面和可视化；既有 Alphalens 因子分析用于策略复盘。</p></div><div class="foot"><span>黎健恒 · 产品作品集与实习项目 · 2026 年 10 月</span><span>第 3 页 / 共 10 页</span></div></section>
+<section class="page" data-page="4" id="page-4"><div class="hdr"><div><div class="t">案例二 · 金融舆情系统</div><div class="s">数据链路、内容处理与语义研判 ｜ 2025.11 — 2026.09</div></div><div class="pg">04 / 10</div></div><div class="page-content"><h3>让研判连接到具体内容与具体对象</h3><p>金融信息来自文章和视频，一份报道可能涉及多只股票与多个行业。系统将内容接入、特征整理、文章情感、逐股及行业研判、统计接口与展示串成完整链路，回答「对哪只股票、哪个行业有什么影响」，并保留来源与判断依据。</p><h3>文章与视频，走进同一条分析链路</h3><div class="flow"><div class="flow-row"><span class="step">01</span><strong>接入与整理</strong><p>只读获取上游内容，提取原文、来源链接、关键词、实体、股票和行业关联，写入本地数据库。</p></div><div class="flow-row"><span class="step">02</span><strong>去重与规范化</strong><p>聚合统计使用规范化标题、内容哈希与时间分组，减少转载对报道量和榜单的重复放大。</p></div><div class="flow-row"><span class="step">03</span><strong>视频转文字</strong><p>审核金融相关性，通过后提取音轨并转写；保留来源，将原记录升级为视频，避免重复入库。</p></div><div class="flow-row"><span class="step">04</span><strong>对象级研判</strong><p>形成文章情感，再对股票与行业分析影响、相关性和理由；符合条件的短文复用联合结果。</p></div><div class="flow-row"><span class="step">05</span><strong>统计与供给</strong><p>结果存入本地 PostgreSQL，经只读 API 供市场大盘、个股详情、行业统计和下游工具消费。</p></div></div><figure class="shotwrap"><button class="shot-button" data-src="assets/sentiment.png" data-caption="金融舆情系统" aria-label="放大金融舆情系统"><img class="shot" src="assets/sentiment.png" alt="金融舆情系统"></button><figcaption>实际产品界面：市场概览呈现情绪、报道趋势、来源与行业信息，详细数据由舆情后端供给。</figcaption></figure></div><div class="foot"><span>黎健恒 · 产品作品集与实习项目 · 2026 年 10 月</span><span>第 4 页 / 共 10 页</span></div></section>
+<section class="page" data-page="5" id="page-5"><div class="hdr"><div><div class="t">案例二 · 三个视角与可追溯设计</div><div class="s">市场全貌 → 行业影响 → 个股关联 → 原文依据</div></div><div class="pg">05 / 10</div></div><div class="page-content"><h3>三个视角，服务不同的研究问题</h3><div class="grid3"><div class="card"><div class="ct">市场：整体发生什么？</div><p>查看去重报道量、已研判覆盖率、情感构成、市场情绪、趋势、热门股票、来源与最新报道。</p></div><div class="card"><div class="ct">行业：影响落在哪里？</div><p>独立行业研判、行业排行与相关报道，不把整篇文章的情感标签直接当作行业结论。</p></div><div class="card"><div class="ct">个股：与它有什么关系？</div><p>结合逐股研判、情感构成、热词、报道占比和来源，打开相关原文检查依据。</p></div></div><h3>清晰口径，让结论可用</h3><p>趋势同时展示报道量与 3 日滚动净情绪。先汇总窗口内利好与利空，再计算差值比例；没有有效样本时保留缺失，避免把「无数据」写成「情绪中性」。当日值、区间值与累计快照分别使用；情感构成以已研判报道为分母，累计点击和播放保留来源口径。</p><div class="grid2"><div class="card"><div class="ct">可解释的正向候选</div><p>结合逐股样本量、平滑比例和稳健排序呈现候选，展示实际统计区间与少样本提示。</p></div><div class="card"><div class="ct">持续更新与恢复</div><p>缓存和快照版本保持阅读连续；视频采用持久任务队列，临时失败重试，中断任务重启后入队。</p></div></div><figure class="shotwrap"><button class="shot-button" data-src="assets/scoring.png" data-caption="综合打分系统" aria-label="放大综合打分系统"><img class="shot" src="assets/scoring.png" alt="综合打分系统"></button><figcaption>关联投研工作流：综合评分与资金流双前 3% 标的池；评分与利好占比采用不同单位和表达。</figcaption></figure><div class="note">部署形态：前端与数据服务可在客户环境部署，推理可选本机 Ollama 或远程兼容接口。使用远程服务时会发送分析文本，本地存储不等于全部文本始终不出网。</div><p class="scope">最近 90 日滚动处理为运营策略，不写成代码硬性自动清理保证。上游读取与本地结果写入分离；Worker 保留处理状态、模型版本、理由与失败信息，以只读 API 供给下游。</p></div><div class="foot"><span>黎健恒 · 产品作品集与实习项目 · 2026 年 10 月</span><span>第 5 页 / 共 10 页</span></div></section>
+<!-- ================= P7 案例三 · 架构 ================= -->
+<section class="page" data-page="6" id="page-6">
+  <div class="hdr">
+    <div><div class="t">案例三 · iOS 端侧 AI Agent</div><div class="s">个人项目　｜　2024 – 2026</div></div>
+    <div class="pg">06 / 10</div>
+  </div>
+
+  <h3>为什么做端侧</h3>
+  <p>云端 Agent 难以直接使用手机的屏幕、应用与手势。我希望验证：将 Harness 与工具执行环境留在手机上，能否持续完成复杂任务。推理由远程模型 API 完成。</p>
+
+  <h3>四层架构</h3>
+  <div class="grid3">
+    <div class="card"><div class="ct">iOS App 前端</div><p>Swift 原生壳 + WKWebView。承载聊天与工作界面、原生能力桥接。</p></div>
+    <div class="card"><div class="ct">Python Harness（核心）</div><p>Agent Loop、任务路由、工具调用、上下文与 Memory / Skills / 压缩 / 断点。常驻后台，经本地 HTTP 与前端通信。</p></div>
+    <div class="card"><div class="ct">模型 API</div><p>远程大模型负责推理、生成与工具调用决策。手机本地跑的是 Harness 与工具执行环境，不部署大模型。</p></div>
+  </div>
+  <div class="grid3" style="margin-top:9px">
+    <div class="card" style="grid-column:1 / -1"><div class="ct">工具执行层</div><p>内置工具 + MCP + iOS 控制工具：读写文件、代码检索、屏幕识别、语义点击、启动 App 等。前端与 Python 后端分离——App 承载界面与原生能力，Python 负责任务执行与编排。</p></div>
+  </div>
+
+  <h3>自研与复用的边界</h3>
+  <table>
+    <tr><th style="width:54%">模块</th><th>归属</th></tr>
+    <tr><td>iOS App 外壳、聊天与工作 UI</td><td>自有实现</td></tr>
+    <tr><td>Python Harness：Agent Loop、任务路由、上下文组装、工具调用流程</td><td>核心自研</td></tr>
+    <tr><td>Memory / Skills / 上下文压缩 / 断点续跑</td><td>自研与改造</td></tr>
+    <tr><td>工具注册、关键词路由、按需挂载、异常回退</td><td>核心自研</td></tr>
+    <tr><td>MCP 协议</td><td>开放标准，采用</td></tr>
+    <tr><td>iOS 系统控制服务</td><td>第三方开源依赖</td></tr>
+    <tr><td>系统级设备控制组件</td><td>第三方组件</td></tr>
+    <tr><td>大模型推理</td><td>第三方 API</td></tr>
+  </table>
+
+  <div class="note">
+    这张表我特意留在了作品集里。自己实现一个功能，不等于从零发明它；参考成熟架构，也不等于复制了源码。把边界写清楚，比笼统说「独立开发了一整套端侧 Agent」更能说明我实际做了什么。
+  </div>
+
+  <div class="foot"><span>黎健恒 · 作品集</span><span>第 6 页 / 共 10 页</span></div>
+</section>
+<!-- ================= P8 案例三 · 工具链与验证 ================= -->
+<section class="page" data-page="7" id="page-7">
+  <div class="hdr">
+    <div><div class="t">案例三 · 工具链与真机验证</div><div class="s">调度、回退，与一次可量化的改进</div></div>
+    <div class="pg">07 / 10</div>
+  </div>
+
+  <h3>工具链怎么组织</h3>
+  <ul>
+    <li>工具按用途注册；Router 与工具选择器采用本地规则，不额外消耗一次模型调用。</li>
+    <li>按需挂载：只把当前任务需要的工具放进上下文，而不是一次塞入全部工具。</li>
+    <li>集成开源 iOS MCP 服务，接入其 46 个系统控制工具，工具总规模 70 个。</li>
+    <li>MCP 不可用时自动回退到内置工具，避免整条链路中断。</li>
+  </ul>
+
+  <h3>真机排障</h3>
+  <ul>
+    <li>修掉工具漏挂与旧工具路径误用——模型请求了并未挂载的工具，导致执行中断。</li>
+    <li>修掉工具协议文本泄漏——工具调用协议被当成回答内容输出给用户。</li>
+    <li>压缩上下文冗余，并为执行失败设计异常回退。</li>
+  </ul>
+
+  <h3>一次可量化的改进</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="v">7,428</div><div class="l">优化前<br>单次设备操作的工具 Schema 开销</div></div>
+    <div class="kpi hero"><div class="v">3,419</div><div class="l">优化后<br>单次设备操作的工具 Schema 开销</div></div>
+    <div class="kpi"><div class="v">54<small>%</small></div><div class="l">开销降幅（约）</div></div>
+    <div class="kpi"><div class="v">70</div><div class="l">工具总规模<br>其中 46 个来自开源 iOS MCP 服务</div></div>
+  </div>
+  <p style="font-size:8.4pt;color:#898781;margin-top:5px">Token 数据来自单次设备操作回归，不代表所有任务的普遍性能提升；修复后主要操作步骤在约 30 秒内完成。</p>
+
+  <h3>关于我</h3>
+  <table>
+    <tr><th style="width:24%">教育</th><td>广州南方学院　经济学（全日制本科）　2022.09 – 2026.06</td></tr>
+    <tr><th>竞赛</th><td>全国大学生电子商务「三创赛」省赛一等奖；CFA Institute Research Challenge 投资分析大赛优秀奖；互联网+ 创新创业大赛省级以上荣誉</td></tr>
+    <tr><th>学术</th><td>参编《人工智能通识教程（AIGC）》（高等教育出版社）；论文发表于《经济学研究前沿》；任广东省普通高校特色新型智库「粤港澳大湾区新兴产业协同发展研究中心」科研助理</td></tr>
+    <tr><th>联系</th><td>13336421933　·　415045878@qq.com　·　广东省广州市</td></tr>
+  </table>
+
+  <div class="foot"><span>黎健恒 · 作品集　·　2026 年 10 月</span><span>第 7 页 / 共 10 页</span></div>
+</section>
+<section class="page" data-page="8" id="page-8"><div class="hdr"><div><div class="t">案例四 · Android 开源连点器</div><div class="s">个人项目 ｜ 自动化工具、动作编排与交互设计</div></div><div class="pg">08 / 10</div></div><div class="page-content"><h3>把重复操作，变成可控的动作</h3><p>面向 Android 新手开发自动点击工具，围绕权限准备、动作编辑、屏幕点位与悬浮执行组织完整路径，让用户配置重复操作，也能找回隐藏的控制入口。</p><div class="tap-flow" role="img" aria-label="连点器操作流程示意：权限设置、编辑动作、悬浮执行、隐藏与找回"><span>操作流程示意</span><div><b>01<small>开启权限</small></b><i>→</i><b>02<small>编辑动作</small></b><i>→</i><b>03<small>悬浮执行</small></b></div><p>点击 / 长按 / 滑动 · 顺序 / 同时执行</p><p>隐藏控制器 → 音量键找回</p></div><h3>产品路径与关键设计</h3><div class="grid2"><div class="card"><div class="ct">动作编排</div><p>点击、长按、滑动；顺序执行与多点同时点击。支持高速重复及以秒为间隔执行，脚本可新建、编辑和复用预设。</p></div><div class="card"><div class="ct">屏幕上的直接操控</div><p>控制器与点位可拖动；录屏隐藏模式收起悬浮窗和点位，长按实体音量键恢复入口。</p></div><div class="card"><div class="ct">新手与系统兼容</div><p>解释悬浮窗、无障碍权限的用途，为常见厂商系统提供设置提示，衔接首次使用与实际执行。</p></div><div class="card"><div class="ct">视觉与交互</div><p>使用液态玻璃底栏、横滑分段选择和弹性反馈；提供系统、浅色、深黑主题。</p></div></div><h3>开源交付与实现边界</h3><p>Kotlin / Jetpack Compose 实现界面；无障碍服务执行手势，Backdrop 支持玻璃渲染，Coroutines 组织异步任务。脚本与设置保存在本地，无账号和云端上传。仓库采用 Apache 2.0 许可证，提供源码与构建入口。</p><div class="note">项目源码：<a href="https://github.com/GuoMie-OvO/liquid-glass-tapper">https://github.com/GuoMie-OvO/liquid-glass-tapper</a><br>小红书：果咩（小红书号 63560046281），持续发布连点器的使用演示与更新。<br>仓库当前标注版本 1.0.30；Android 10 及以上。功能依赖用户授权与厂商系统行为。未将开源发布表述为已验证的增长或商业效果。</div></div><div class="foot"><span>黎健恒 · 产品作品集 · 2026 年 10 月</span><span>第 8 页 / 共 10 页</span></div></section><section class="page" data-page="9" id="page-9"><div class="hdr"><div><div class="t">案例五 · 澄页 Clearleaf</div><div class="s">个人项目 ｜ 本地桌面电子书阅读器</div></div><div class="pg">09 / 10</div></div><div class="page-content"><h3>从本地文件，到连续的阅读体验</h3><p>独立开发本地桌面电子书阅读器，将导入、书库搜索、阅读设置、进度和批注连接起来。面向希望整理自己的电子书，并在电脑上安静阅读的用户。</p><figure class="shotwrap"><button class="shot-button" data-src="assets/clearleaf-library.png" data-caption="澄页本地书库" aria-label="放大澄页本地书库"><img class="shot" src="assets/clearleaf-library.png" alt="澄页实际书库空状态界面"></button><figcaption>实际应用界面：本地导入、书名 / 作者 / 格式搜索、网格与列表视图集中呈现。</figcaption></figure><h3>围绕阅读任务，组织核心能力</h3><div class="grid2"><div class="card"><div class="ct">多格式与本地书库</div><p>入口覆盖 EPUB、TXT、PDF、MOBI、AZW3、FB2、漫画压缩包、HTML 和 Markdown，通过不同路径解析内容。</p></div><div class="card"><div class="ct">舒适的阅读环境</div><p>主题、字体、字号、行距、页边距和亮度可调；支持翻页、滚动、键盘操作与全屏。</p></div><div class="card"><div class="ct">定位与记录</div><p>目录和全文搜索辅助定位；书签、划线批注、笔记与进度保存在本机，便于继续阅读。</p></div><div class="card"><div class="ct">桌面交付</div><p>Electron 处理本地文件与窗口，React 组织界面；复用 Foliate 等开源阅读能力；仓库以 MIT 许可证开源。</p></div></div><div class="note">项目源码：<a href="https://github.com/GuoMie-OvO/clearleaf-reader">https://github.com/GuoMie-OvO/clearleaf-reader</a><br>当前已提供 Windows 桌面应用。格式支持来自应用入口与源码，未对所有复杂排版或加密文件逐一验证；未加入使用量与性能收益。作品集仅展示产品，不附带个人图书或阅读数据。</div></div><div class="foot"><span>黎健恒 · 产品作品集 · 2026 年 10 月</span><span>第 9 页 / 共 10 页</span></div></section><section class="page" data-page="10" id="page-10"><div class="hdr"><div><div class="t">实习项目 · AIGC 应用与内容运营</div><div class="s">模型应用、内容制作、账号运营与数据反馈</div></div><div class="pg">10 / 10</div></div><div class="page-content"><article class="intern-block"><div class="intern-head"><strong>广州元紫智能科技有限公司</strong><span>2023.06 — 2023.09</span></div><div class="intern-role">AIGC 工程师实习 · 模型应用与内容生产</div><p>围绕业务场景探索大模型与生成式 AI 的应用，将本地模型部署、内容制作和账号运营连接起来。</p><div class="grid2"><div class="card"><div class="ct">模型应用实践</div><p>负责 Llama、ChatGLM 等大语言模型的本地部署与 LoRA 微调，支撑业务场景应用落地。</p></div><div class="card"><div class="ct">AIGC 内容交付</div><p>使用 Stable Diffusion、Midjourney 完成图像与文案生产，将生成工具用于实际内容制作。</p></div></div><p style="margin-top:12px">运营小红书、淘宝、抖音等平台账号，参与直播与内容策划。交付包括可用的模型应用环境、图文素材及运营内容。</p><p class="scope">这段实习体现早期模型应用与内容交付实践，和后续金融产品、端侧 Agent 的自研范围分别表述。</p></article><article class="intern-block"><div class="intern-head"><strong>佛山市永盛房地产有限公司</strong><span>2024.06 — 2024.09</span></div><div class="intern-role">运营助理实习 · 项目推广与内容增长</div><p>面向房地产项目推广，策划并执行宣传内容，制作物料与短视频，运营各平台账号并跟踪数据表现。</p><div class="grid2"><div class="card"><div class="ct">内容与渠道执行</div><p>将项目卖点整理为宣传素材、短视频与发布内容，支持项目推广。</p></div><div class="card"><div class="ct">数据反馈与迭代</div><p>跟踪账号内容表现，持续调整内容方向和表达方式，以提升关注与转化。</p></div></div><div class="metrics-inline"><strong>70%</strong><span>账号关注量提升 · 实习期项目记录</span></div><p class="scope">该指标反映账号关注增长，不等同于销售转化。</p></article><div class="note">经历连接：早期实习积累模型应用、内容交付与数据反馈经验；后续金融产品经历从实习生转为正式员工，进一步承担需求梳理、产品设计、实现与上线。金融产品的两份案例详见第 2—5 页。</div></div><div class="foot"><span>黎健恒 · 产品作品集与实习项目 · 2026 年 10 月</span><span>第 10 页 / 共 10 页</span></div></section><dialog class="preview" aria-label="产品截图预览"><header><span class="preview-title"></span><button class="preview-close" aria-label="关闭图片预览">关闭 ×</button></header><img alt=""></dialog><script>const preview=document.querySelector('.preview');let previewTrigger;document.querySelectorAll('.shot-button').forEach(button=>button.addEventListener('click',()=>{previewTrigger=button;preview.querySelector('img').src=button.dataset.src;preview.querySelector('img').alt=button.dataset.caption;preview.querySelector('.preview-title').textContent=button.dataset.caption;preview.showModal();preview.scrollTop=0;}));document.querySelector('.preview-close').addEventListener('click',()=>preview.close());preview.addEventListener('close',()=>previewTrigger?.focus({preventScroll:true}));preview.addEventListener('click',event=>{if(event.target!==preview)return;const box=preview.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)preview.close();});</script>
+</body></html>

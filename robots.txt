@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://guomie-tech-blog.pages.dev/sitemap.xml

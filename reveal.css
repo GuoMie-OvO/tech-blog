@@ -1,0 +1,17 @@
+:root{--reveal-duration:500ms;--reveal-step:60ms}
+/* Replace the old whole-hero entrance with one staggered treatment per content group. */
+.hero-copy,.hero-product{transition:none}
+@starting-style{.hero-copy,.hero-product{opacity:1;transform:none}}
+.reveal-enabled [data-reveal-group]>:not([data-reveal-done]){opacity:0;transform:translateY(8px)}
+.reveal-enabled [data-reveal-group]>[data-reveal-state=visible]{animation:fade-in-up var(--reveal-duration) var(--ease-out) both;animation-delay:var(--reveal-delay,0ms)}
+@keyframes fade-in-up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* A compact cue like the supplied reference. The entire 44px target remains clickable. */
+.next-page{padding:20px 20px 30px;border:0;background:var(--bg);overflow:visible}
+.next-page-link{flex-direction:row;justify-content:center;gap:7px;max-width:none;width:fit-content;min-height:44px;padding:0 14px;border-radius:8px;color:var(--secondary);font-size:12px;font-weight:500;line-height:1.5;transition:color 160ms ease,transform 160ms var(--ease-out)}
+.pull-status{font-size:inherit;min-height:0;margin:0;color:inherit}
+.pull-arrow{width:15px;height:15px;flex-shrink:0;opacity:.8}
+.next-page.is-ready .next-page-link,.next-page.is-ready .pull-status{color:var(--accent)}
+.next-page-link:active{transform:scale(.97)}
+@media(hover:hover) and (pointer:fine){.next-page-link:hover{color:var(--text)}}
+@media(prefers-reduced-motion:reduce){.reveal-enabled [data-reveal-group]>:not([data-reveal-done]){opacity:1;transform:none}.reveal-enabled [data-reveal-group]>[data-reveal-state=visible]{animation:none}.pull-arrow{transform:none!important}}
+@media print{.reveal-enabled [data-reveal-group]>*{opacity:1!important;transform:none!important;animation:none!important}.next-page{display:none}}

@@ -1,0 +1,12 @@
+/posts / 301
+/posts/* / 301
+/tags / 301
+/tags/* / 301
+/search / 301
+/search/* / 301
+/projects /work.html 301
+/projects/* /work.html 301
+/about/ /about.html 301
+/archives /work.html 301
+/archives/* /work.html 301
+/rss.xml / 301
