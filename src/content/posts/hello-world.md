@@ -22,4 +22,4 @@ draft: false
 
 ## 个人作品
 
-目前收录 iOS AI Agent 与澄页 Clearleaf。[去看看个人作品](/projects/)。
+目前收录 iOS AI Agent、澄页 Clearleaf 与 Android 连点器。[去看看个人作品](/projects/)。
